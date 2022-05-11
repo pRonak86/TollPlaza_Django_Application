@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success</title>
+</head>
+<body>
+    <h2 align="center"> Car Owner Details </h2>
+    <table border="1" align="center">
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Contact</th>
+            <th>Email ID</th>
+            <th>Vehical No</th>
+            <th>Registration Date</th>
+            <th>Activation Date</th>
+            <th>Deactivation Date</th>
+            <th>Account</th>
+            <th>Activate/ Deactivate</th>
+        </tr>
+        {% if cust %}
+        {% for c in cust %}
+        <tr align="center">
+            <td>{{c.id}}</td>
+            <td>{{c.fname}}</td>
+            <td>{{c.lname}}</td>
+            <td>{{c.contact}}</td>
+            <td>{{c.emailid}}</td>
+            <td>{{c.vehicalNo}}</td>
+            <td>{{c.registration_Date}}</td>
+            <td>{{c.activation_Date}}</td>
+            <td>{{c.deactivation_Date}}</td>
+            <td>{{c.account}}</td>
+            <td align="center"><form action="/update_account/" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="id" value="{{c.id}}">
+                <input type="submit" name="Update" value="Action">
+            </form> </td>
+
+        </tr>
+        {% endfor %}
+        {% endif %}
+
+
+    </table>
+    <marquee hspace="150" scrollamount="12"><h3 align="center"> Just Click on Action Button For Activate and Deactivate Car Owener Account.. !!</h3></marquee>
+</body>
+</html>

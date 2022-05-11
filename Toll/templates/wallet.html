@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wallet</title>
+</head>
+<body>
+    <form action="/amount/" method="post">
+        {% csrf_token %}
+        <table align="center">
+            <tr> <td>Amount</td>
+            <td><input type="text" name="amount"> </td> </tr>
+
+            <tr>
+                <td>  Mode  </td>
+                <td><select name="mode">
+                    <option value="online">Online</option>
+                    <option value="offline">Offline</option>
+                </select> </td>
+            </tr>
+            <tr>
+                <td> Employee Id</td>
+                <td><input type="text" name="empid"> </td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Pay"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

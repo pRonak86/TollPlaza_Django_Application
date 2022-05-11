@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+<body>
+<h3 align="right">
+     Wallet Balance - {{amount}}
+    <form action="/wallet/" method="Post">
+    {% csrf_token %}
+    <input type="hidden" name="id" value="{{id}}"></a>
+    <input type="submit" value="Add Amount in  Wallet">
+</form> </h3>
+    <table border="1" align="center">
+        <tr>
+            <td>Name</td>
+            <td>{{fname}}</td>
+        </tr>
+        <tr>
+            <td>QR-Code</td>
+            <td><img src={{qr_code.url}}></td>
+        </tr>
+    </table>
+<div id="test2">
+    <h4 align="center"><label id="p2"> {{msg}} {{trancationId}}</label></h4>
+</div>
+</body>
+</html>
